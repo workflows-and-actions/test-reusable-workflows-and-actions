@@ -1,5 +1,5 @@
 name: Test Reusable workflow with inputs and outputs 
-
+# we have to call the reusable workflow inside a job to use the outputs in another job.
 on:
   workflow_dispatch
 jobs:   
