@@ -4,7 +4,7 @@ on:
   workflow_dispatch
 jobs:   
   job1: 
-    uses: workflows-and-actions/reusable-workflows/.github/workflows/inputs_and_outputs.yml@main
+    uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/inputs_and_outputs.yml@main
   use_outputs_from_job1:
     runs-on: ubuntu-latest
     needs: job1
