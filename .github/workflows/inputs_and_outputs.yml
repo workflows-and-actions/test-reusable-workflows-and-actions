@@ -1,14 +1,34 @@
 name: Test Reusable workflow with inputs and outputs 
-# we have to call the reusable workflow inside a job to use the outputs in another job.
 on:
   workflow_dispatch
 jobs:   
   job1: 
+  
     uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/inputs_and_outputs.yml@main
     with:
      input1: an_input
-  use_outputs_from_job1:
+  job2:
     runs-on: ubuntu-latest
-    needs: job1
+    needs: job1 # start only if job1 is complete
     steps:
-      - run: echo ${{ needs.job1.outputs.firstword }} ${{ needs.job1.outputs.secondword }}      
+      - name: use output from a completed job
+        run: echo ${{ needs.job1.outputs.firstword }} ${{ needs.job1.outputs.secondword }}  
+      - name: call a reusable workflow inside a step and use the output in the next step.
+        id: get_output        
+        uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/inputs_and_outputs.yml@main
+        with:
+         input1: another_input
+      - name: use output from previous step
+        run: echo ${{ steps.get_output.outputs.firstword }} ${{ steps.get_output.outputs.secondword }}  
+  job3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show how to pass output between steps that are not calling a reusable workflow
+        id: get_output
+        run: echo "output3=myoutput" >> $GITHUB_OUTPUT 
+      - name: use output from previous step
+        run: echo ${{steps.get_output.output3}}
+      
+      
+  
+         
