@@ -1,4 +1,4 @@
-name: Test Reusable workflow with inputs and outputs 
+name: Test a reusable workflow and an action with inputs and outputs 
 on:
   workflow_dispatch
 jobs:   
@@ -13,9 +13,9 @@ jobs:
     steps:
       - name: use output from a completed job
         run: echo ${{ needs.job1.outputs.firstword }} ${{ needs.job1.outputs.secondword }}  
-      - name: call a reusable workflow inside a step and use the output in the next step.
+      - name: call an action (we cannot call a reusable workflow here) inside a step and use the output in the next step.
         id: get_output        
-        uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/inputs_and_outputs.yml@main
+        uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/inputs_and_outputs@main
         with:
          input1: another_input
       - name: use output from previous step
