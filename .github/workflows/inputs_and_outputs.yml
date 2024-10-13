@@ -8,14 +8,14 @@ jobs:
     with:
      input1: an_input
   job2:
-    name: j2: use output from j1
+    name: j2 use output from j1
     runs-on: ubuntu-latest
     needs: job1 # start only if job1 is complete
     steps:
       - name: use output from a completed job
         run: echo ${{ needs.job1.outputs.firstword }} ${{ needs.job1.outputs.secondword }}  
   job3:
-    name: j3: call an action and use output
+    name: j3 call an action and use output
     runs-on: ubuntu-latest
     steps:
       - name: call an action in this step and use the output in the next step.
@@ -26,7 +26,7 @@ jobs:
       - name: use output from previous step
         run: echo ${{ steps.get_output.outputs.firstword }} ${{ steps.get_output.outputs.secondword }}          
   job4:
-    name: j4: pass output between steps of a job
+    name: j4 pass output between steps of a job
     runs-on: ubuntu-latest
     steps:
       - name: create output
