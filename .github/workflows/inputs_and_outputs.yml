@@ -33,7 +33,9 @@ jobs:
         id: get_output
         run: echo "output3=myoutput" >> $GITHUB_OUTPUT 
       - name: use output from previous step
-        run: echo ${{steps.get_output.outputs.output3}}
+        run: |
+         echo ${{steps.get_output.outputs.output3}}
+         echo test done
       
       
   
