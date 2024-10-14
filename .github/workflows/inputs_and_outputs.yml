@@ -4,7 +4,7 @@ on:
 jobs:   
   job1: 
     name: j1 call reusable workflow
-    uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/inputs_and_outputs.yml@main
+    uses: ${{vars.reusableWorkflowsAndActions_path}}/workflows/inputs_and_outputs.yml@main
     with:
      input1: an_input
   job2:
