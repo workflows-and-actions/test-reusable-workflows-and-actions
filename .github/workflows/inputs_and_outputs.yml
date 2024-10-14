@@ -1,13 +1,10 @@
 name: Test a reusable workflow and an action with inputs and outputs 
 on:
   workflow_dispatch
-env:
-  reusableWorkflowsAndActions_path:
-    ${{vars.reusableWorkflowsAndActions_path}}
 jobs:   
   job1: 
     name: j1 call reusable workflow
-    uses: ${{env.reusableWorkflowsAndActions_path}}/workflows/inputs_and_outputs.yml@main
+    uses: ${{vars.reusableWorkflowsAndActions_path}}/.github/workflows/inputs_and_outputs.yml@main
     with:
      input1: an_input
   job2:
