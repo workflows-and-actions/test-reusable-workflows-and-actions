@@ -20,8 +20,7 @@ jobs:
     steps:
       - name: call an action in this step and use the output in the next step.
         id: get_output      
-        uses: ${{secrets.REUSABLEWORKFLOWSANDACTIONS_PATH}}/.github/composite-actions/inputs_and_outputs@main
-        # uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/inputs_and_outputs@main
+        uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/inputs_and_outputs@main
         with:
          input1: another_input
       - name: use output from previous step
