@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test var
+        shell: bash
         run: |
           echo ${{vars.REUSABLEWORKFLOWSANDACTIONS_PATH}}/.github/workflows/inputs_and_outputs.yml@main
           echo ${{env.pt}}
+          ls ${{env.pt}}
           echo ${{vars.REUSABLEWORKFLOWSANDACTIONS_PATH}}
           echo ${{vars.reusableWorkflowsAndActions_path}}
   job1: 
