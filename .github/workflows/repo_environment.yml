@@ -14,4 +14,4 @@ jobs:
       - name: call the action 
         uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/repo_environment@main
         with:
-          repo_environment_var: ${{environment.name}}
+          repo_environment_var: ${{vars.env_var_prod}}
