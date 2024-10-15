@@ -14,7 +14,8 @@ jobs:
         run: |
           echo ${{vars.REUSABLEWORKFLOWSANDACTIONS_PATH}}/.github/workflows/inputs_and_outputs.yml@main
           echo ${{env.pt}}
-          ls  ${{vars.REUSABLEWORKFLOWSANDACTIONS_PATH}}
+          # ls ${{vars.REUSABLEWORKFLOWSANDACTIONS_PATH}}
+          ls workflows-and-actions/reusable-workflows-and-actions
           echo ${{vars.REUSABLEWORKFLOWSANDACTIONS_PATH}}
           echo ${{vars.reusableWorkflowsAndActions_path}}
   job1: 
