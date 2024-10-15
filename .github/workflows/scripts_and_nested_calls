@@ -5,9 +5,15 @@ jobs:
   job1:
     name: j1 call a reusable workflow
     uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/scripts_and_nested_calls.yml@main
+    with:
+      nested_workflow_file: nested_workflow.yml
+      script_file: test.sh
   job2:
     name: j2 call an action 
     runs-on: ubuntu-latest
     steps:
       - name: call the action 
         uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/scripts_and_nested_calls@main
+        with:
+          nested_action_file: nested_action
+          script_file: test.sh
