@@ -8,6 +8,10 @@ jobs:
   job2:
     name: j2 call an action 
     runs-on: ubuntu-latest
+    environment:
+      name: prod
     steps:
       - name: call the action 
         uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/repo_environment@main
+        with:
+          repo_environment_var: ${{environment.name}}
