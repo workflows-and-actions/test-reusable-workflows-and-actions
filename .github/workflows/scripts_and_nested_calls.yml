@@ -15,5 +15,5 @@ jobs:
       - name: call the action 
         uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/scripts_and_nested_calls@main
         with:
-          nested_action_file: nested_action
+          nested_action_path: nested_action
           script_file: hello.sh
