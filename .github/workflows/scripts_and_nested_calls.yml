@@ -7,7 +7,7 @@ jobs:
     uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/scripts_and_nested_calls.yml@main
     with:
       nested_workflow_file: nested_workflow.yml
-      script_file: test.sh
+      script_file: hello.sh
   job2:
     name: j2 call an action 
     runs-on: ubuntu-latest
@@ -16,4 +16,4 @@ jobs:
         uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/scripts_and_nested_calls@main
         with:
           nested_action_file: nested_action
-          script_file: test.sh
+          script_file: hello.sh
