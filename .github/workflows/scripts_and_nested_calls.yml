@@ -1,10 +1,12 @@
 name: Test a reusable workflow and an action using nested calls and shell script files
 on:
   workflow_dispatch
+env:
+  pt: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/scripts_and_nested_calls.yml@main
 jobs:   
   job1:
     name: j1 call a reusable workflow
-    uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/scripts_and_nested_calls.yml@main
+    uses: ${{env.pt}}
     with:
       nested_workflow_file: nested_workflow.yml
       script_file: hello.sh
