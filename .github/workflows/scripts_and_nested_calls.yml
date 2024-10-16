@@ -6,7 +6,7 @@ env:
 jobs:   
   job1:
     name: j1 call a reusable workflow
-    uses: ${{env.pt}}
+    uses: "${{env.pt}}"
     with:
       nested_workflow_file: nested_workflow.yml
       script_file: hello.sh
