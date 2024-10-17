@@ -10,7 +10,7 @@ jobs:
   job1:
     name: j1 call a reusable workflow
     needs: job0
-    uses: ${{ needs.job0.outputs.path1 }}
+    uses: "${{ needs.job0.outputs.path1 }}"
     # uses: "${{env.pt}}/.github/workflows/scripts_and_nested_calls.yml@main"
     with:
       nested_workflow_file: nested_workflow.yml
