@@ -1,4 +1,4 @@
-name: Test a reusable workflow and an action using nested calls and shell script files
+name: Test a reusable workflow and an action using a nested call to a shell script.
 on:
   workflow_dispatch
 env:
@@ -9,7 +9,8 @@ jobs:
     uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/scripts_and_nested_calls.yml@main
     with:
       nested_workflow_file: nested_workflow.yml
-      script_file: workflows-and-actions/reusable-workflows-and-actions/.github/scripts/hello.sh
+      script_file: hello.sh
+      # script_file: workflows-and-actions/reusable-workflows-and-actions/.github/scripts/hello.sh
 
   job2:
     name: j2 call an action 
@@ -18,4 +19,4 @@ jobs:
       - name: call the action 
         uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/scripts_and_nested_calls@main
         with:
-          script_file: workflows-and-actions/reusable-workflows-and-actions/.github/scripts/hello.sh
+          script_file: hello.sh # the script has to be in the .github/scripts directory of the called action
