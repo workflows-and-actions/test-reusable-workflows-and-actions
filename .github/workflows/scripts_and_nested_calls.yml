@@ -9,9 +9,7 @@ jobs:
     name: j1 call a reusable workflow
     uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/scripts_and_nested_calls.yml@main
     with:
-      script_file: scripts/hello.sh
-      # script_file: workflows-and-actions/reusable-workflows-and-actions/.github/scripts/hello.sh
-
+      script_path: scripts/hello.sh # relative to .github directory of the called reusable workflow/action
   job2:
     name: j2 call an action 
     runs-on: ubuntu-latest
@@ -19,4 +17,5 @@ jobs:
       - name: call the action 
         uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/scripts_and_nested_calls@main
         with:
-          script_file: scripts/hello.sh # the script folder has to be in the .github directory of the called action
+          script_path: scripts/hello.sh # relative to .github directory of the called reusable workflow/action
+
