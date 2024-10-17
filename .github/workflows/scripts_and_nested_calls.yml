@@ -1,3 +1,6 @@
+# The setup here requires our shell scripts live along reusable workflows and action in the same repo. We can use github.action_path
+# to run scripts from a running action. However, we cannot do this directly from a reusable workflow, we have
+# to first call an action from  a reusable workflow and then call the script from that action.
 name: Test a reusable workflow and an action using a nested call to a shell script.
 on:
   workflow_dispatch
@@ -6,8 +9,7 @@ jobs:
     name: j1 call a reusable workflow
     uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/scripts_and_nested_calls.yml@main
     with:
-      nested_workflow_file: nested_workflow.yml
-      script_file: hello.sh
+      script_file: scripts/hello.sh
       # script_file: workflows-and-actions/reusable-workflows-and-actions/.github/scripts/hello.sh
 
   job2:
@@ -17,4 +19,4 @@ jobs:
       - name: call the action 
         uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/scripts_and_nested_calls@main
         with:
-          script_file: hello.sh # the script has to be in the .github/scripts directory of the called action
+          script_file: scripts/hello.sh # the script folder has to be in the .github directory of the called action
