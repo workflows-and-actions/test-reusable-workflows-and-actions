@@ -1,8 +1,6 @@
 name: Test a reusable workflow and an action using a nested call to a shell script.
 on:
   workflow_dispatch
-env:
-  pt: workflows-and-actions/reusable-workflows-and-actions
 jobs:   
   job1:
     name: j1 call a reusable workflow
