@@ -4,9 +4,14 @@ on:
 env:
   pt: workflows-and-actions/reusable-workflows-and-actions
 jobs:   
+  job0:
+    name: set paths
+    uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/set_paths.yml@main
   job1:
     name: j1 call a reusable workflow
-    uses: "${{env.pt}}/.github/workflows/scripts_and_nested_calls.yml@main"
+    needs: job0
+    uses: ${{ needs.job0.outputs.path1 }}
+    # uses: "${{env.pt}}/.github/workflows/scripts_and_nested_calls.yml@main"
     with:
       nested_workflow_file: nested_workflow.yml
       script_file: hello.sh
