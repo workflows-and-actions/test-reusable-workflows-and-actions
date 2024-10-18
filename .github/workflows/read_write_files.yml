@@ -6,7 +6,7 @@ jobs:
     name: read a json file
     uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/read_write_files.yml@main
     with:
-      file_path: test-files/f1.json
+      file_path: .github/test-files/f1.json
       
       
   
