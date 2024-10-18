@@ -1,0 +1,13 @@
+name: Test a reusable workflow and an action to read and write files 
+on:
+  workflow_dispatch
+jobs:   
+  job1: 
+    name: j1 call reusable workflow
+    uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/read_write_files.yml@main
+    with:
+     file_path: test-files/f1.json
+      
+      
+  
+         
