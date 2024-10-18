@@ -8,7 +8,7 @@ jobs:
       with:
         sparse-checkout: |
           .github/test-files/f1.json
-          sparse-checkout-cone-mode: false
+          # sparse-checkout-cone-mode: false
     - name: j1 call reusable workflow
       uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/read_write_files.yml@main
       with:
