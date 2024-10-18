@@ -3,10 +3,16 @@ on:
   workflow_dispatch
 jobs:   
   job1: 
-    name: j1 call reusable workflow
-    uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/read_write_files.yml@main
-    with:
-     file_path: test-files/f1.json
+    - name: checkout file
+      uses: actions/checkout@v4
+      with:
+        sparse-checkout: |
+          .github/test-files/f1.json
+          sparse-checkout-cone-mode: false
+    - name: j1 call reusable workflow
+      uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/read_write_files.yml@main
+      with:
+        file_path: test-files/f1.json
       
       
   
