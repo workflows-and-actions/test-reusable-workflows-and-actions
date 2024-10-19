@@ -3,7 +3,7 @@ on:
   workflow_dispatch
 jobs:   
   job1: 
-    name: read and write files using reusable workflow
+    name: job1
     uses: workflows-and-actions/reusable-workflows-and-actions/.github/workflows/read_write_files.yml@main
     with:
       json_file_path: .github/test-files/f1.json
