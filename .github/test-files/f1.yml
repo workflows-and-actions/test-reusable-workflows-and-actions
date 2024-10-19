@@ -1,11 +1,11 @@
 level0: 
-  "name": inside level0
+  name: inside level0
   level1: 
-    "name": "inside level1"
-    "level2": 
-       "name": "inside level2"
-       "level3": 
-         "name": "inside level3"
-         "level4": 
-           "name": "inside level4"
-           "list": ["A", "B"]
+    name: inside level1
+    level2: 
+      name: inside level2
+      level3: 
+        name: inside level3
+        level4: 
+          name: inside level4
+          list: ["A", "B"]
