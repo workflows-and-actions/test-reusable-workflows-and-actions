@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: job1
     env:
-      jsondata: ffff
+      jsondata: ${{needs.job1.outputs.jsondata}} 
     # ${{needs.job1.outputs.jsondata}}
     steps:
       - name: log output
