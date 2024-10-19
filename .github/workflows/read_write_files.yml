@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: job1
     env:
-      jsondata: ${{needs.job1.steps.read_json.outputs.result}}
+      jsondata: ${{needs.job1.outputs.jsondata}}
     steps:
       - name: log output
       # if: ${{ env.jsondata == 'newtest' }} # we must accesss env vars using env context when outside a run
