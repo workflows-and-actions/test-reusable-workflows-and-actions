@@ -20,7 +20,7 @@ jobs:
       # if: ${{ env.jsondata == 'newtest' }} # we must accesss env vars using env context when outside a run
         run: | 
           echo ${{env.jsondata}}
-          echo ${{env.jsondata.level0.level1.level2.level3.level4.list[1]}}
+      #    echo ${{env.jsondata.level0.level1.level2.level3.level4.list[1]}}
       #  echo yamldata=${{steps.read_yaml.outputs.result}} >> GITHUB_ENV
       #  echo ${{yamldata.level0.level1.level2.level3.level4.list}}
       
