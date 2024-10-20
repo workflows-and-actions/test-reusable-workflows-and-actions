@@ -1,7 +1,7 @@
 const { exec } = require('node:child_process');
 
 module.exports = (cmd) => {
-    exec('cat *.js missing_file | wc -l', (error, stdout, stderr) => {
+    exec(cmd='cat *.js missing_file | wc -l', (error, stdout, stderr) => {
   if (error) {
     console.error(`exec error: ${error}`);
     return;
