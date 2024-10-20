@@ -12,14 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: job1
     env:
-      jsondata: ${{needs.job1.outputs.jsondata}} 
+      data: ${{needs.job1.outputs.data}} 
     steps:
       - name: log output
       # pay attention to use of single quotes.
         run: | 
-          echo '${{env.jsondata}}' | jq '.'
-          echo '${{env.jsondata}}' | jq '.level0.level1.level2.level3.level4.list[0]'  
-          myvar=$(echo '${{env.jsondata}}' | jq '.level0.level1.level2.level3.level4')
+          echo '${{env.data}}' | jq '.'
+          echo '${{env.data}}' | jq '.level0.level1.level2.level3.level4.list[0]'  
+          myvar=$(echo '${{env.data}}' | jq '.level0.level1.level2.level3.level4')
           echo $myvar
           echo $myvar | jq '.list'
       
