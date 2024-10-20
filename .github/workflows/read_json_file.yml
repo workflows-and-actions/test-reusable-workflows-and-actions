@@ -17,12 +17,12 @@ jobs:
       - name: log output
         run: | 
           echo ${{env.jsondata}} | jq '.'
-          echo ${{env.jsondata}} | jq '.level0'
-          echo ${{env.jsondata}} | jq '.level0.level1.level2.level3.level4.list'
-          echo ${{env.jsondata}} | jq '.level0.level1.level2.level3.level4.list[]'
-          echo ${{env.jsondata}} | jq '.level0.level1.level2.level3.level4.list[0]'  
-          echo myvar=${{env.jsondata}} | jq '.level0.level1.level2.level3.level4.list'
-          echo $myvar
+      #   echo ${{env.jsondata}} | jq '.level0'
+      #    echo ${{env.jsondata}} | jq '.level0.level1.level2.level3.level4.list'
+      #    echo ${{env.jsondata}} | jq '.level0.level1.level2.level3.level4.list[]'
+      #    echo ${{env.jsondata}} | jq '.level0.level1.level2.level3.level4.list[0]'  
+      #    echo myvar=${{env.jsondata}} | jq '.level0.level1.level2.level3.level4.list'
+      #    echo $myvar
       #  echo yamldata=${{steps.read_yaml.outputs.result}} >> GITHUB_ENV
       #  echo ${{yamldata.level0.level1.level2.level3.level4.list}}
       
