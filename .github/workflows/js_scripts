@@ -1,0 +1,17 @@
+# The setup here requires the js scripts live either in this repo or in the repo for reusable workflows and action in the same repo. 
+# A. For scripts living in the repo for reusable workflows and actions: We can use github.action_path
+# to run scripts from a running action, however, we cannot do this directly from a reusable workflow, we have
+# to first call an action from  a reusable workflow and then call the script from that action.
+# B: We can call scripts living in this repo by sending file paths to the reusable workflow or action
+name: Demo for running javascript scripts.
+on:
+  workflow_dispatch
+jobs:   
+  job1:
+    name: parent job
+    runs-on: ubuntu-latest
+    steps:
+      - name: call the action 
+        uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/js_scripts@main
+        with:
+          script_path: .github/scripts/hello.js # relative to root directory of the repo of called action
