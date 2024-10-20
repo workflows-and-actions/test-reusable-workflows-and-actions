@@ -3,7 +3,7 @@
 # to run scripts from a running action, however, we cannot do this directly from a reusable workflow, we have
 # to first call an action from  a reusable workflow and then call the script from that action.
 # B: We can call scripts living in this repo by sending file paths to the reusable workflow or action
-name: Demo for running javascript scripts.
+name: js_scripts: Demo for running javascript scripts.
 on:
   workflow_dispatch
 jobs:   
