@@ -15,6 +15,7 @@ jobs:
       jsondata: ${{needs.job1.outputs.jsondata}} 
     steps:
       - name: log output
+      # pay attention to use of single quotes.
         run: | 
           echo '${{env.jsondata}}' | jq '.'
           echo '${{env.jsondata}}' | jq '.level0.level1.level2.level3.level4.list[0]'  
