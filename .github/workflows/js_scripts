@@ -14,4 +14,4 @@ jobs:
       - name: call the action 
         uses: workflows-and-actions/reusable-workflows-and-actions/.github/composite-actions/js_scripts@main
         with:
-          script_path: .github/scripts/hello.js # relative to root directory of the repo of called action
+          file_path: .github/test-files/exec.js # relative to root directory of the repo 
