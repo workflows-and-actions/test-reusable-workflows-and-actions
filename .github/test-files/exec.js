@@ -1,6 +1,6 @@
-import { exec } from "child_process";
+const exec =require( "child_process" );
 
-export default function ("ls -la", (error, stdout, stderr) => {
+module.exports = exec("ls -la", (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
