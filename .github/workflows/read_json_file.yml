@@ -21,7 +21,7 @@ jobs:
           echo '${{env.jsondata}}' | jq '.level0.level1.level2.level3.level4.list[0]'  
           myvar=$(echo '${{env.jsondata}}' | jq '.level0.level1.level2.level3.level4')
           echo $myvar
-          echo $myvar | jq '.'
+          echo $myvar | jq '.list'
       
       
   
